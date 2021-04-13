@@ -13,7 +13,7 @@ module.exports = {
       }], {});
     */
     return queryInterface.bulkInsert(
-      "Cars",
+      "cars",
       [
         {
           number: 1,
@@ -38,6 +38,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('People', null, {});
     */
-    return queryInterface.bulkDelete("Cars", null, {});
+    return queryInterface.bulkDelete("cars", null, {});
   },
 };

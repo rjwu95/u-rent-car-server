@@ -21,6 +21,11 @@ export class Car extends Model {
 
 Car.init(
   {
+    id: {
+      type: DataTypes.NUMBER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
     number: { allowNull: false, type: DataTypes.STRING },
     status: { allowNull: false, type: DataTypes.STRING },
     name: { allowNull: false, type: DataTypes.STRING },
@@ -34,18 +39,18 @@ Car.init(
     },
     birth: { allowNull: false, type: DataTypes.DATE },
     remark: { allowNull: true, type: DataTypes.STRING },
-    createdAt: {
-      allowNull: false,
-      type: DataTypes.DATE,
-    },
-    updatedAt: {
-      allowNull: false,
-      type: DataTypes.DATE,
-    },
+    // createdAt: {
+    //   allowNull: false,
+    //   type: DataTypes.DATE,
+    // },
+    // updatedAt: {
+    //   allowNull: false,
+    //   type: DataTypes.DATE,
+    // },
   },
   {
     sequelize,
-    modelName: "Car",
+    modelName: "cars",
   }
 );
 

@@ -2,10 +2,9 @@
 
 import { Association, DataTypes, Model } from "sequelize";
 import sequelize from "../sequelize";
-import { Staff, Customer, Car } from "./index";
 
 export class Contract extends Model {
-  public id!: number;
+  // public id!: number;
   public outerId!: number;
   public renterId!: number;
   public driverId!: number;
@@ -25,22 +24,28 @@ export class Contract extends Model {
   // public readonly outer!: Staff;
   // public readonly renter!: Customer;
   // public readonly driver!: Customer;
+
   // public readonly car!: Car;
 
   // public static associations: {
   //   outer: Association<Contract, Staff>;
   //   renter: Association<Contract, Customer>;
   //   driver: Association<Contract, Customer>;
-  //   car: Association<Contract, Car>;
+  // car: Association<Contract, Car>;
   // };
 }
 
 Contract.init(
   {
+    // id: {
+    //   type: DataTypes.NUMBER,
+    //   autoIncrement: true,
+    //   primaryKey: true,
+    // },
+    carId: { allowNull: false, type: DataTypes.NUMBER },
     outerId: { allowNull: false, type: DataTypes.NUMBER },
     renterId: { allowNull: false, type: DataTypes.NUMBER },
     driverId: { allowNull: false, type: DataTypes.NUMBER },
-    carId: { allowNull: false, type: DataTypes.NUMBER },
     departure: { allowNull: false, type: DataTypes.DATE },
     arrive: { allowNull: false, type: DataTypes.DATE },
     giveLocation: { allowNull: false, type: DataTypes.STRING },
@@ -50,12 +55,12 @@ Contract.init(
     feeTable: { allowNull: false, type: DataTypes.STRING },
     remark: { allowNull: false, type: DataTypes.STRING },
     special: { allowNull: false, type: DataTypes.STRING },
-    createdAt: { allowNull: false, type: DataTypes.DATE },
-    updatedAt: { allowNull: false, type: DataTypes.DATE },
+    // createdAt: { allowNull: false, type: DataTypes.DATE },
+    // updatedAt: { allowNull: false, type: DataTypes.DATE },
   },
   {
+    tableName: "contracts",
     sequelize,
-    modelName: "Contract",
   }
 );
 

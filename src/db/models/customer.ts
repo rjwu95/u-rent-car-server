@@ -67,7 +67,7 @@ Customer.init(
   },
   {
     sequelize,
-    modelName: "Customer",
+    modelName: "customers",
   }
 );
 

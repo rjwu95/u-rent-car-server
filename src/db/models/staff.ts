@@ -37,7 +37,7 @@ Staff.init(
   },
   {
     sequelize,
-    modelName: "Staff",
+    modelName: "staffs",
   }
 );
 
