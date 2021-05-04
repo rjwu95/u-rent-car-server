@@ -3,7 +3,7 @@
 import { DataTypes, Model } from "sequelize";
 import sequelize from "../sequelize";
 
-export class Car extends Model {
+class Car extends Model {
   public id!: number;
   public number!: string;
   public status!: string;
@@ -21,11 +21,11 @@ export class Car extends Model {
 
 Car.init(
   {
-    id: {
-      type: DataTypes.NUMBER,
-      autoIncrement: true,
-      primaryKey: true,
-    },
+    // id: {
+    //   type: DataTypes.NUMBER,
+    //   autoIncrement: true,
+    //   primaryKey: true,
+    // },
     number: { allowNull: false, type: DataTypes.STRING },
     status: { allowNull: false, type: DataTypes.STRING },
     name: { allowNull: false, type: DataTypes.STRING },
@@ -38,15 +38,16 @@ Car.init(
       type: DataTypes.STRING,
     },
     birth: { allowNull: false, type: DataTypes.DATE },
-    remark: { allowNull: true, type: DataTypes.STRING },
-    // createdAt: {
-    //   allowNull: false,
-    //   type: DataTypes.DATE,
-    // },
-    // updatedAt: {
-    //   allowNull: false,
-    //   type: DataTypes.DATE,
-    // },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
   },
   {
     sequelize,

@@ -3,7 +3,7 @@
 import { DataTypes, Model } from "sequelize";
 import sequelize from "../sequelize";
 
-export class Staff extends Model {
+class Staff extends Model {
   public id!: number;
   public loginId!: string;
   public password!: string;
@@ -27,12 +27,14 @@ Staff.init(
       type: DataTypes.STRING,
     },
     createdAt: {
-      allowNull: false,
       type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     updatedAt: {
-      allowNull: false,
       type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
   },
   {
@@ -41,4 +43,4 @@ Staff.init(
   }
 );
 
-// export Staff;
+export default Staff;

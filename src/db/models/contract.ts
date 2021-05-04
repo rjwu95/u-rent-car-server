@@ -2,13 +2,16 @@
 
 import { Association, DataTypes, Model } from "sequelize";
 import sequelize from "../sequelize";
+import Car from "./car";
+import Customer from "./customer";
+import Staff from "./staff";
 
-export class Contract extends Model {
-  // public id!: number;
+class Contract extends Model {
+  public id!: number;
+  public carId!: number;
   public outerId!: number;
   public renterId!: number;
   public driverId!: number;
-  public carId!: number;
   public departure!: Date;
   public arrive!: Date;
   public giveLocation!: string;
@@ -21,18 +24,17 @@ export class Contract extends Model {
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 
-  // public readonly outer!: Staff;
-  // public readonly renter!: Customer;
-  // public readonly driver!: Customer;
+  public readonly outer!: Staff;
+  public readonly renter!: Customer;
+  public readonly driver!: Customer;
+  public readonly car!: Car;
 
-  // public readonly car!: Car;
-
-  // public static associations: {
-  //   outer: Association<Contract, Staff>;
-  //   renter: Association<Contract, Customer>;
-  //   driver: Association<Contract, Customer>;
-  // car: Association<Contract, Car>;
-  // };
+  public static associations: {
+    outer: Association<Contract, Staff>;
+    renter: Association<Contract, Customer>;
+    driver: Association<Contract, Customer>;
+    car: Association<Contract, Car>;
+  };
 }
 
 Contract.init(
@@ -42,24 +44,32 @@ Contract.init(
     //   autoIncrement: true,
     //   primaryKey: true,
     // },
-    carId: { allowNull: false, type: DataTypes.NUMBER },
-    outerId: { allowNull: false, type: DataTypes.NUMBER },
-    renterId: { allowNull: false, type: DataTypes.NUMBER },
-    driverId: { allowNull: false, type: DataTypes.NUMBER },
-    departure: { allowNull: false, type: DataTypes.DATE },
-    arrive: { allowNull: false, type: DataTypes.DATE },
-    giveLocation: { allowNull: false, type: DataTypes.STRING },
-    carCheck: { allowNull: false, type: DataTypes.STRING },
-    initKm: { allowNull: false, type: DataTypes.NUMBER },
-    fee: { allowNull: false, type: DataTypes.NUMBER },
-    feeTable: { allowNull: false, type: DataTypes.STRING },
-    remark: { allowNull: false, type: DataTypes.STRING },
-    special: { allowNull: false, type: DataTypes.STRING },
-    // createdAt: { allowNull: false, type: DataTypes.DATE },
-    // updatedAt: { allowNull: false, type: DataTypes.DATE },
+    carId: { type: DataTypes.NUMBER },
+    outerId: { type: DataTypes.NUMBER },
+    renterId: { type: DataTypes.NUMBER },
+    driverId: { type: DataTypes.NUMBER },
+    departure: { type: DataTypes.DATE },
+    arrive: { type: DataTypes.DATE },
+    giveLocation: { type: DataTypes.STRING },
+    carCheck: { type: DataTypes.STRING },
+    initKm: { type: DataTypes.NUMBER },
+    fee: { type: DataTypes.NUMBER },
+    feeTable: { type: DataTypes.STRING },
+    remark: { type: DataTypes.STRING },
+    special: { type: DataTypes.STRING },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
   },
   {
-    tableName: "contracts",
+    modelName: "contracts",
     sequelize,
   }
 );

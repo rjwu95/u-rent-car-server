@@ -3,7 +3,7 @@
 import { DataTypes, Model } from "sequelize";
 import sequelize from "../sequelize";
 
-export class Customer extends Model {
+class Customer extends Model {
   public id!: number;
   public name!: string;
   public birthday!: number;
@@ -59,10 +59,12 @@ Customer.init(
     createdAt: {
       allowNull: false,
       type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
     },
     updatedAt: {
       allowNull: false,
       type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
     },
   },
   {

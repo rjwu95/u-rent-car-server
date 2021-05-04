@@ -11,33 +11,14 @@ module.exports = {
         name: 'John Doe',
         isBetaMember: false
       }], {});
-    */
+      */
     return queryInterface.bulkInsert(
-      "cars",
+      "staffs",
       [
         {
-          number: "1",
-          status: "1",
-          name: "1",
-          grade: "1",
-          gear: "1",
-          fuel: "1",
-          distance: "1",
-          remainFuel: "1",
-          birth: new Date(),
-          remark: "1",
-        },
-        {
-          number: "1",
-          status: "1",
-          name: "1",
-          grade: "1",
-          gear: "1",
-          fuel: "1",
-          distance: "1",
-          remainFuel: "1",
-          birth: new Date(),
-          remark: "1",
+          loginId: "123123",
+          password: "123123",
+          name: "123123",
         },
       ],
       {}
@@ -51,7 +32,7 @@ module.exports = {
 
       Example:
       return queryInterface.bulkDelete('People', null, {});
-    */
-    return queryInterface.bulkDelete("cars", null, {});
+      */
+    return queryInterface.bulkDelete("staffs", null, {});
   },
 };
