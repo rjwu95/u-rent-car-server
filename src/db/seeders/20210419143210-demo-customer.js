@@ -25,6 +25,8 @@ module.exports = {
           license: "1",
           licenseType: "1",
           licenseDate: new Date(),
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       ],
       {}

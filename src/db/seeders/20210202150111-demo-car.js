@@ -26,6 +26,8 @@ module.exports = {
           remainFuel: "1",
           birth: new Date(),
           remark: "1",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           number: "1",
@@ -38,6 +40,8 @@ module.exports = {
           remainFuel: "1",
           birth: new Date(),
           remark: "1",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       ],
       {}

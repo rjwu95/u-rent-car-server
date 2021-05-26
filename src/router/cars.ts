@@ -18,6 +18,13 @@ router.get("/", async (req: Request, res: Response) => {
   }
 });
 
+router.get("/:id", async (req: Request, res: Response) => {
+  const car = await Car.findOne({
+    where: { id: Number(req.params.id) },
+  });
+  return res.status(200).send(car);
+});
+
 router.post("/", async (req: Request, res: Response) => {
   const { body } = req;
   try {
@@ -26,6 +33,14 @@ router.post("/", async (req: Request, res: Response) => {
   } catch (err) {
     return res.status(500).send({ error: err });
   }
+});
+
+router.patch("/", async (req, res) => {
+  await Car.update(req.body, {
+    where: { id: Number(req.body.id) },
+  });
+
+  return res.status(200).send("success");
 });
 
 export default router;

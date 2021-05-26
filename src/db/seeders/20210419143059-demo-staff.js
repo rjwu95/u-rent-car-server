@@ -19,6 +19,8 @@ module.exports = {
           loginId: "123123",
           password: "123123",
           name: "123123",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       ],
       {}

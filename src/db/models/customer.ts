@@ -14,6 +14,7 @@ class Customer extends Model {
   public license!: number;
   public licenseType!: string;
   public licenseDate!: Date;
+  public postcode!: string;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 }

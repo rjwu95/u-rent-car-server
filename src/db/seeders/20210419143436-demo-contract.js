@@ -17,9 +17,9 @@ module.exports = {
       [
         {
           carId: 3,
-          outerId: 3,
-          renterId: 3,
-          driverId: 3,
+          outerId: 1,
+          renterId: 1,
+          driverId: 1,
           departure: new Date(),
           arrive: new Date(),
           giveLocation: "1",
@@ -29,6 +29,8 @@ module.exports = {
           feeTable: "1",
           remark: "1",
           special: "1",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         // {
         //   carId: 4,

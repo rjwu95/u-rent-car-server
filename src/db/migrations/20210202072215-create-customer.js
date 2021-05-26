@@ -35,14 +35,17 @@ module.exports = {
       licenseDate: {
         type: Sequelize.DATE,
       },
-      // createdAt: {
-      //   allowNull: false,
-      //   type: Sequelize.DATE,
-      // },
-      // updatedAt: {
-      //   allowNull: false,
-      //   type: Sequelize.DATE,
-      // },
+      postcode: {
+        type: Sequelize.STRING,
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
     });
   },
   down: (queryInterface, Sequelize) => {

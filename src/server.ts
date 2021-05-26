@@ -1,8 +1,11 @@
 import cors from "cors";
 import express from "express";
 import sequelize from "./db/sequelize";
+import bodyParser from "body-parser";
 
 const app = express();
+app.use(cors());
+app.use(bodyParser.json());
 const port = process.env.PORT || 3001;
 
 app.use("/api", require("./router"));

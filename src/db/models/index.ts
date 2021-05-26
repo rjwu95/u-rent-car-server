@@ -7,23 +7,23 @@ Car.hasOne(Contract, {
   foreignKey: "carId",
 });
 Staff.hasOne(Contract, { as: "contracts", foreignKey: "outerId" });
-Customer.hasOne(Contract, { as: "contracts", foreignKey: "renterId" });
-Customer.hasOne(Contract, { as: "contracts", foreignKey: "driverId" });
+Customer.hasOne(Contract, { as: "renter", foreignKey: "renterId" });
+Customer.hasOne(Contract, { as: "driver", foreignKey: "driverId" });
 
 Contract.belongsTo(Car, {
   as: "car",
   foreignKey: "carId",
 });
 Contract.belongsTo(Staff, {
-  as: "staffs",
+  as: "outer",
   foreignKey: "outerId",
 });
 Contract.belongsTo(Customer, {
-  as: "customers",
+  as: "renter",
   foreignKey: "renterId",
 });
 Contract.belongsTo(Customer, {
-  as: "customers",
+  as: "driver",
   foreignKey: "driverId",
 });
 
