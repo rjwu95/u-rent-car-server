@@ -8,11 +8,12 @@ const AMOUNT_OF_PAGE = 20;
 router.get("/", async (req: Request, res: Response) => {
   const { page } = req.query;
   try {
-    const cars = await Car.findAndCountAll({
-      limit: AMOUNT_OF_PAGE,
-      offset: (Number(page) - 1) * AMOUNT_OF_PAGE,
-    });
-    return res.status(200).send({ cars: cars.rows });
+    // const cars = await Car.findAndCountAll({
+    //   limit: AMOUNT_OF_PAGE,
+    //   offset: (Number(page) - 1) * AMOUNT_OF_PAGE,
+    // });
+    const cars = await Car.findAll();
+    return res.status(200).send(cars);
   } catch (err) {
     return res.status(500).send({ error: err });
   }

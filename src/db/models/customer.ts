@@ -7,8 +7,7 @@ class Customer extends Model {
   public id!: number;
   public name!: string;
   public birthday!: number;
-  public backId!: string;
-  public hp!: number;
+  public hp!: string;
   public address!: string;
   public detailAddress!: string;
   public license!: number;
@@ -29,13 +28,9 @@ Customer.init(
       allowNull: false,
       type: DataTypes.NUMBER,
     },
-    backId: {
-      allowNull: false,
-      type: DataTypes.STRING,
-    },
     hp: {
       allowNull: false,
-      type: DataTypes.NUMBER,
+      type: DataTypes.STRING,
     },
     address: {
       allowNull: false,
@@ -47,7 +42,7 @@ Customer.init(
     },
     license: {
       allowNull: false,
-      type: DataTypes.NUMBER,
+      type: DataTypes.STRING,
     },
     licenseType: {
       allowNull: false,
@@ -56,6 +51,9 @@ Customer.init(
     licenseDate: {
       allowNull: false,
       type: DataTypes.DATE,
+    },
+    postcode: {
+      type: DataTypes.STRING,
     },
     createdAt: {
       allowNull: false,

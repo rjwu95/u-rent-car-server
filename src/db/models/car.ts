@@ -21,11 +21,6 @@ class Car extends Model {
 
 Car.init(
   {
-    // id: {
-    //   type: DataTypes.NUMBER,
-    //   autoIncrement: true,
-    //   primaryKey: true,
-    // },
     number: { allowNull: false, type: DataTypes.STRING },
     status: { allowNull: false, type: DataTypes.STRING },
     name: { allowNull: false, type: DataTypes.STRING },
@@ -38,6 +33,7 @@ Car.init(
       type: DataTypes.STRING,
     },
     birth: { allowNull: false, type: DataTypes.DATE },
+    remark: { type: DataTypes.TEXT },
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,

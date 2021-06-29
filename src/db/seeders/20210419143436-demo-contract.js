@@ -16,7 +16,7 @@ module.exports = {
       "contracts",
       [
         {
-          carId: 3,
+          carId: 1,
           outerId: 1,
           renterId: 1,
           driverId: 1,

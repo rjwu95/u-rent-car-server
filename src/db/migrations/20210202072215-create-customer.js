@@ -14,11 +14,8 @@ module.exports = {
       birthday: {
         type: Sequelize.INTEGER,
       },
-      backId: {
-        type: Sequelize.STRING,
-      },
       hp: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       address: {
         type: Sequelize.STRING,
@@ -27,7 +24,7 @@ module.exports = {
         type: Sequelize.STRING,
       },
       license: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       licenseType: {
         type: Sequelize.STRING,

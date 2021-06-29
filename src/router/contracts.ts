@@ -39,7 +39,18 @@ router.get("/:id", async (req: Request, res: Response) => {
 });
 
 router.post("/", async (req, res) => {
-  const contract = await Contract.create(req.body);
+  const { renter, driver, car } = req.body;
+  const [a, b, c] = await Promise.all([
+    Customer.create(renter),
+    Car.findOne({ where: { number: car.number } }),
+    driver?.name && Customer.create(driver),
+  ]);
+  const contract = await Contract.create({
+    ...req.body,
+    renterId: a.id,
+    carId: b?.id,
+    driverId: c ? c.id : a.id,
+  });
   return res.status(200).send(contract);
 });
 
@@ -51,6 +62,12 @@ router.patch("/", async (req, res) => {
     }),
     Car.update(req.body.car, {
       where: { id: Number(req.body.car.id) },
+    }),
+    Customer.update(req.body.renter, {
+      where: { id: Number(req.body.renter.id) },
+    }),
+    Customer.update(req.body.driver, {
+      where: { id: Number(req.body.driver.id) },
     }),
   ]);
 
