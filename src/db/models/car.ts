@@ -21,27 +21,26 @@ class Car extends Model {
 
 Car.init(
   {
-    number: { allowNull: false, type: DataTypes.STRING },
-    status: { allowNull: false, type: DataTypes.STRING },
-    name: { allowNull: false, type: DataTypes.STRING },
-    grade: { allowNull: false, type: DataTypes.STRING },
-    gear: { allowNull: false, type: DataTypes.STRING },
-    fuel: { allowNull: false, type: DataTypes.STRING },
-    distance: { allowNull: false, type: DataTypes.STRING },
+    number: { type: DataTypes.STRING },
+    status: { type: DataTypes.STRING },
+    name: { type: DataTypes.STRING },
+    grade: { type: DataTypes.STRING },
+    gear: { type: DataTypes.STRING },
+    fuel: { type: DataTypes.STRING },
+    distance: { type: DataTypes.STRING },
     remainFuel: {
-      allowNull: false,
       type: DataTypes.STRING,
     },
-    birth: { allowNull: false, type: DataTypes.DATE },
+    birth: { type: DataTypes.DATE },
     remark: { type: DataTypes.TEXT },
     createdAt: {
       type: DataTypes.DATE,
-      allowNull: false,
+
       defaultValue: DataTypes.NOW,
     },
     updatedAt: {
       type: DataTypes.DATE,
-      allowNull: false,
+
       defaultValue: DataTypes.NOW,
     },
   },

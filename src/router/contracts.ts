@@ -15,6 +15,7 @@ router.get("/", async (req, res) => {
       { model: Car, as: "car", attributes: ["number", "name"] },
       { model: Staff, as: "outer", attributes: ["name"] },
     ],
+    order: [["updatedAt", "DESC"]],
   });
   return res.status(200).send(contracts);
 });
@@ -40,15 +41,18 @@ router.get("/:id", async (req: Request, res: Response) => {
 
 router.post("/", async (req, res) => {
   const { renter, driver, car } = req.body;
-  const [a, b, c] = await Promise.all([
+  let [a, b, c] = await Promise.all([
     Customer.create(renter),
     Car.findOne({ where: { number: car.number } }),
     driver?.name && Customer.create(driver),
   ]);
+  if (!b) {
+    b = await Car.create(req.body.car);
+  }
   const contract = await Contract.create({
     ...req.body,
     renterId: a.id,
-    carId: b?.id,
+    carId: b.id,
     driverId: c ? c.id : a.id,
   });
   return res.status(200).send(contract);

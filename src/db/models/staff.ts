@@ -15,25 +15,20 @@ class Staff extends Model {
 Staff.init(
   {
     loginId: {
-      allowNull: false,
       type: DataTypes.STRING,
     },
     password: {
-      allowNull: false,
       type: DataTypes.STRING,
     },
     name: {
-      allowNull: false,
       type: DataTypes.STRING,
     },
     createdAt: {
       type: DataTypes.DATE,
-      allowNull: false,
       defaultValue: DataTypes.NOW,
     },
     updatedAt: {
       type: DataTypes.DATE,
-      allowNull: false,
       defaultValue: DataTypes.NOW,
     },
   },

@@ -3,7 +3,6 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable("contracts", {
       id: {
-        allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
@@ -14,7 +13,6 @@ module.exports = {
           key: "id",
           model: "staffs",
         },
-        allowNull: false,
       },
       renterId: {
         type: Sequelize.INTEGER,
@@ -22,7 +20,6 @@ module.exports = {
           key: "id",
           model: "customers",
         },
-        allowNull: false,
       },
       driverId: {
         type: Sequelize.INTEGER,
@@ -30,7 +27,6 @@ module.exports = {
           key: "id",
           model: "customers",
         },
-        allowNull: false,
       },
       carId: {
         type: Sequelize.INTEGER,
@@ -38,7 +34,6 @@ module.exports = {
           key: "id",
           model: "cars",
         },
-        allowNull: false,
       },
       departure: {
         type: Sequelize.DATE,
@@ -68,11 +63,9 @@ module.exports = {
         type: Sequelize.STRING,
       },
       createdAt: {
-        allowNull: false,
         type: Sequelize.DATE,
       },
       updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE,
       },
     });

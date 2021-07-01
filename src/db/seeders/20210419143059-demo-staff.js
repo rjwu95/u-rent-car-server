@@ -1,7 +1,17 @@
 "use strict";
+const bcrypt = require("bcrypt");
+
+function generateHashStr(str) {
+  return new Promise((resolve, reject) => {
+    bcrypt.hash(str, 10, function (err, hash) {
+      if (err) reject(err);
+      resolve(hash);
+    });
+  });
+}
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+  up: async (queryInterface, Sequelize) => {
     /*
       Add altering commands here.
       Return a promise to correctly handle asynchronicity.
@@ -16,9 +26,10 @@ module.exports = {
       "staffs",
       [
         {
-          loginId: "123123",
-          password: "123123",
-          name: "123123",
+          id: 1,
+          loginId: "hyunwoo",
+          password: await generateHashStr("hyunwoo0000"),
+          name: "hyunwoo",
           createdAt: new Date(),
           updatedAt: new Date(),
         },

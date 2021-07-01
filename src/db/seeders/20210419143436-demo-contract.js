@@ -16,10 +16,10 @@ module.exports = {
       "contracts",
       [
         {
-          carId: 1,
-          outerId: 1,
-          renterId: 1,
-          driverId: 1,
+          carId: 7,
+          outerId: 4,
+          renterId: 4,
+          driverId: 4,
           departure: new Date(),
           arrive: new Date(),
           giveLocation: "1",

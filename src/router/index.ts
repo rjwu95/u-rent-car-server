@@ -8,7 +8,7 @@ import auth from "./auth";
 const router = Router();
 
 router.get("/", (req, res) => {
-  res.status(200).send("건 가즈아");
+  res.status(200).send("route success");
 });
 
 router.use("/cars", cars);

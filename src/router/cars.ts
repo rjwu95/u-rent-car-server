@@ -12,7 +12,7 @@ router.get("/", async (req: Request, res: Response) => {
     //   limit: AMOUNT_OF_PAGE,
     //   offset: (Number(page) - 1) * AMOUNT_OF_PAGE,
     // });
-    const cars = await Car.findAll();
+    const cars = await Car.findAll({ order: [["updatedAt", "DESC"]] });
     return res.status(200).send(cars);
   } catch (err) {
     return res.status(500).send({ error: err });

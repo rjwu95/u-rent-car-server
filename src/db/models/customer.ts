@@ -21,47 +21,37 @@ class Customer extends Model {
 Customer.init(
   {
     name: {
-      allowNull: false,
       type: DataTypes.STRING,
     },
     birthday: {
-      allowNull: false,
       type: DataTypes.NUMBER,
     },
     hp: {
-      allowNull: false,
       type: DataTypes.STRING,
     },
     address: {
-      allowNull: false,
       type: DataTypes.STRING,
     },
     detailAddress: {
-      allowNull: false,
       type: DataTypes.STRING,
     },
     license: {
-      allowNull: false,
       type: DataTypes.STRING,
     },
     licenseType: {
-      allowNull: false,
       type: DataTypes.NUMBER,
     },
     licenseDate: {
-      allowNull: false,
       type: DataTypes.DATE,
     },
     postcode: {
       type: DataTypes.STRING,
     },
     createdAt: {
-      allowNull: false,
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
     },
     updatedAt: {
-      allowNull: false,
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
     },

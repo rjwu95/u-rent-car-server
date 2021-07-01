@@ -5,7 +5,9 @@ const router = Router();
 
 router.get("/", async (req: Request, res: Response) => {
   try {
-    const customers = await Customer.findAll();
+    const customers = await Customer.findAll({
+      order: [["updatedAt", "DESC"]],
+    });
     return res.status(200).send(customers);
   } catch (err) {
     return res.status(500).send({ error: err });
