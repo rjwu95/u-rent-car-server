@@ -7,7 +7,7 @@
     "start": "node dist/app.bundle.js",
     "start:dev": "nodemon --exec babel-node app.js",
     "build": "webpack --progress --mode=production",
-    "deploy": "npm run build && git add . && git commit -m 'deploy' && eb deploy u-rent-car-server",
+    "deploy": "npm run build && git add . && git commit -m 'deploy' && eb deploy Urentcarserver-env",
     "seed": "npx sequelize db:seed:all",
     "test": "jest"
   },
