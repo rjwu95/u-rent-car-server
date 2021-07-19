@@ -9,11 +9,9 @@ router.get("/", async (req, res) => {
   return res.status(200).send(staffs);
 });
 
-const saltRounds = 10;
-
 function generateHashStr(str: string) {
   return new Promise((resolve, reject) => {
-    bcrypt.hash(str, saltRounds, function (err, hash) {
+    bcrypt.hash(str, process.env.SALT_ROUNDS, function (err, hash) {
       if (err) reject(err);
       resolve(hash);
     });
