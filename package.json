@@ -6,10 +6,8 @@
   "scripts": {
     "start": "node dist/app.bundle.js",
     "start:dev": "nodemon --exec babel-node app.js",
-    "build:prod": "webpack --progress --mode=production",
-    "build:dev": "webpack --progress --mode=development",
-    "deploy:dev": "npm run build:dev && git add . && git commit -m 'deploy' && eb deploy pocket-ace-backend-dev",
-    "deploy:prod": "npm run build:prod && git add . && git commit -m 'deploy' && eb deploy pocket-ace-backend-prod",
+    "build": "webpack --progress --mode=production",
+    "deploy": "npm run build && git add . && git commit -m 'deploy' && eb deploy u-rent-car-server",
     "seed": "npx sequelize db:seed:all",
     "test": "jest"
   },
