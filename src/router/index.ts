@@ -17,4 +17,4 @@ router.use("/customers", customers);
 router.use("/staffs", staffs);
 router.use("/auth", auth);
 
-module.exports = router;
+export default router;
