@@ -44,8 +44,8 @@ module.exports = {
       giveLocation: {
         type: Sequelize.STRING,
       },
-      carCheck: {
-        type: Sequelize.STRING,
+      carCheckUrl: {
+        type: Sequelize.TEXT,
       },
       initKm: {
         type: Sequelize.INTEGER,

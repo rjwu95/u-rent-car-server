@@ -15,12 +15,12 @@ class Contract extends Model {
   public departure!: Date;
   public arrive!: Date;
   public giveLocation!: string;
-  public carCheck!: string;
   public initKm!: number;
   public fee!: number;
   public feeTable!: string;
   public remark!: string;
   public special!: string;
+  public carCheckUrl!: string;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 
@@ -51,7 +51,7 @@ Contract.init(
     departure: { type: DataTypes.DATE },
     arrive: { type: DataTypes.DATE },
     giveLocation: { type: DataTypes.STRING },
-    carCheck: { type: DataTypes.STRING },
+    carCheckUrl: { type: DataTypes.TEXT },
     initKm: { type: DataTypes.NUMBER },
     fee: { type: DataTypes.NUMBER },
     feeTable: { type: DataTypes.STRING },
